@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi Marrakech Travel - Tours Premium au Maroc</title>
+    <title>Hi Marrakech Travel - Premium Morocco Tours</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
 
 <!-- WhatsApp Button -->
-<a href="https://wa.me/212600000000" target="_blank" class="whatsapp-float">
+<a href="https://wa.me/212600000000" target="_blank" class="whatsapp-float" aria-label="Contact on WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
@@ -21,11 +21,18 @@
     <div class="container">
         <div class="nav-content">
             <a href="#" class="logo"><span class="logo-hi">Hi</span><span class="logo-marrakech">Marrakech Travel</span></a>
-            <button class="menu-toggle"><span></span><span></span><span></span></button>
-            <ul class="nav-links">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#tours">Tours</a></li>
-                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            <div class="nav-right">
+                <button class="lang-toggle" id="langToggle" onclick="toggleLang()" aria-label="Switch language">
+                    <span class="lang-icon">🌐</span>
+                    <span id="langLabel">FR</span>
+                </button>
+                <button class="menu-toggle" id="menuToggleBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" data-en="Home" data-fr="Accueil">Home</a></li>
+                <li><a href="#tours" data-en="Tours" data-fr="Tours">Tours</a></li>
+                <li><a href="#activities" data-en="Activities" data-fr="Activités">Activities</a></li>
+                <li><a href="#contact" class="nav-cta" data-en="Contact" data-fr="Contact">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -37,75 +44,75 @@
     <div class="hero-overlay"></div>
     <div class="container hero-content">
         <h1 class="hero-title">
-            <span class="title-line">Découvrez le Maroc</span>
-            <span class="title-line">Comme Jamais Auparavant</span>
+            <span class="title-line" data-en="Discover Morocco" data-fr="Découvrez le Maroc">Discover Morocco</span>
+            <span class="title-line" data-en="Like Never Before" data-fr="Comme Jamais Auparavant">Like Never Before</span>
         </h1>
-        <p class="hero-subtitle">Des expériences authentiques · Authentic experiences</p>
-        <a href="#tours" class="btn btn-primary">Découvrir nos Tours</a>
+        <p class="hero-subtitle" data-en="Authentic Experiences · Premium Tours" data-fr="Expériences Authentiques · Tours Premium">Authentic Experiences · Premium Tours</p>
+        <a href="#tours" class="btn btn-primary" data-en="Explore Our Tours" data-fr="Découvrir nos Tours">Explore Our Tours</a>
     </div>
 </section>
 
 <!-- Tours -->
 <section id="tours" class="tours-section">
     <div class="container">
-        <h2 class="section-title">Nos Tours Exclusifs</h2>
+        <h2 class="section-title" data-en="Our Exclusive Tours" data-fr="Nos Tours Exclusifs">Our Exclusive Tours</h2>
         
         <!-- Merzouga 3 Days -->
         <div class="tour-card">
             <div class="tour-slider-col">
                 <div class="tour-slider">
                     <div class="slider-container" id="slider-merzouga">
-                        <div class="slide active"><img src="merzouga/image1.jpg" alt="Merzouga"></div>
-                        <div class="slide"><img src="merzouga/image2.jpg" alt="Merzouga"></div>
-                        <div class="slide"><img src="merzouga/image3.jpg" alt="Merzouga"></div>
+                        <div class="slide active"><img src="merzouga/image1.jpg" alt="Merzouga Desert" loading="lazy"></div>
+                        <div class="slide"><img src="merzouga/image2.jpg" alt="Merzouga Desert" loading="lazy"></div>
+                        <div class="slide"><img src="merzouga/image3.jpg" alt="Merzouga Desert" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-merzouga',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-merzouga',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-merzouga',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-merzouga',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-merzouga"></div>
                 </div>
             </div>
             <div class="tour-info-col">
-                <div class="tour-badge">🐪 Merzouga · 3 Jours / 2 Nuits</div>
-                <h3 class="tour-title">Désert Merzouga avec Camp Luxe & Quad</h3>
-                
+                <div class="tour-badge" data-en="🐪 Merzouga · 3 Days / 2 Nights" data-fr="🐪 Merzouga · 3 Jours / 2 Nuits">🐪 Merzouga · 3 Days / 2 Nights</div>
+                <h3 class="tour-title" data-en="Merzouga Desert — Luxury Camp & Quad" data-fr="Désert Merzouga avec Camp Luxe & Quad">Merzouga Desert — Luxury Camp & Quad</h3>
                 <div class="tour-highlights">
-                    <h5>Points Forts:</h5>
+                    <h5 data-en="Highlights:" data-fr="Points Forts:">Highlights:</h5>
                     <ul>
-                        <li>Cross the High Atlas Mountains and Tizi n'Tichka Pass</li>
-                        <li>Visit Ait Ben Haddou Kasbah (UNESCO site)</li>
-                        <li>Explore Todra Gorges and Dades Valley</li>
-                        <li>Overnight stay in luxury desert camp in Merzouga</li>
-                        <li>Quad bike experience in the Sahara Desert</li>
-                        <li>Camel ride or 4x4 transfer in Erg Chebbi dunes</li>
-                        <li>Sunset and sunrise in Merzouga Desert</li>
-                        <li>Traditional dinner and Berber music</li>
+                        <li data-en="Cross the High Atlas Mountains and Tizi n'Tichka Pass" data-fr="Traversez le Haut Atlas et le col de Tizi n'Tichka">Cross the High Atlas Mountains and Tizi n'Tichka Pass</li>
+                        <li data-en="Visit Ait Ben Haddou Kasbah (UNESCO site)" data-fr="Visitez la Kasbah d'Aït Ben Haddou (site UNESCO)">Visit Ait Ben Haddou Kasbah (UNESCO site)</li>
+                        <li data-en="Explore Todra Gorges and Dades Valley" data-fr="Explorez les gorges du Todra et la vallée du Dadès">Explore Todra Gorges and Dades Valley</li>
+                        <li data-en="Overnight stay in luxury desert camp in Merzouga" data-fr="Nuit en camp de luxe dans le désert de Merzouga">Overnight stay in luxury desert camp in Merzouga</li>
+                        <li data-en="Quad bike experience in the Sahara Desert" data-fr="Balade en quad dans le désert du Sahara">Quad bike experience in the Sahara Desert</li>
+                        <li data-en="Camel ride or 4x4 transfer in Erg Chebbi dunes" data-fr="Balade à dos de chameau ou transfert 4x4 dans les dunes d'Erg Chebbi">Camel ride or 4x4 transfer in Erg Chebbi dunes</li>
+                        <li data-en="Sunset and sunrise in Merzouga Desert" data-fr="Coucher et lever de soleil dans le désert de Merzouga">Sunset and sunrise in Merzouga Desert</li>
+                        <li data-en="Traditional dinner and Berber music" data-fr="Dîner traditionnel et musique berbère">Traditional dinner and Berber music</li>
                     </ul>
                 </div>
-                
                 <div class="tour-program">
-                    <button class="tour-program-toggle" onclick="toggleProgram(this)">Voir le Programme Détaillé</button>
+                    <button class="tour-program-toggle" onclick="toggleProgram(this)" data-en="View Detailed Program" data-fr="Voir le Programme Détaillé">View Detailed Program</button>
                     <div class="tour-program-content">
                         <div class="tour-program-day">
-                            <h6>Jour 1: Marrakech – Atlas – Ait Ben Haddou – Dades</h6>
-                            <p>Early pickup, cross High Atlas Mountains via Tizi n'Tichka Pass. Visit UNESCO Ait Ben Haddou Kasbah. Continue through Ouarzazate and Valley of Roses to Dades Valley. Dinner and overnight.</p>
+                            <h6 data-en="Day 1: Marrakech – Atlas – Ait Ben Haddou – Dades" data-fr="Jour 1 : Marrakech – Atlas – Aït Ben Haddou – Dadès">Day 1: Marrakech – Atlas – Ait Ben Haddou – Dades</h6>
+                            <p data-en="Early pickup, cross High Atlas Mountains via Tizi n'Tichka Pass. Visit UNESCO Ait Ben Haddou Kasbah. Continue through Ouarzazate and Valley of Roses to Dades Valley. Dinner and overnight." data-fr="Départ matinal, traversée du Haut Atlas via le col de Tizi n'Tichka. Visite de la Kasbah d'Aït Ben Haddou (UNESCO). Poursuite via Ouarzazate et la Vallée des Roses jusqu'à la vallée du Dadès. Dîner et nuit sur place.">Early pickup, cross High Atlas Mountains via Tizi n'Tichka Pass. Visit UNESCO Ait Ben Haddou Kasbah. Continue through Ouarzazate and Valley of Roses to Dades Valley. Dinner and overnight.</p>
                         </div>
                         <div class="tour-program-day">
-                            <h6>Jour 2: Dades – Todra – Merzouga – Camp Luxe</h6>
-                            <p>Visit Todra Gorges. Head to Merzouga and enter Erg Chebbi dunes by camel or 4x4. Quad biking adventure in Sahara. Traditional dinner, Berber music, stargazing.</p>
+                            <h6 data-en="Day 2: Dades – Todra – Merzouga – Luxury Camp" data-fr="Jour 2 : Dadès – Todra – Merzouga – Camp Luxe">Day 2: Dades – Todra – Merzouga – Luxury Camp</h6>
+                            <p data-en="Visit Todra Gorges. Head to Merzouga and enter Erg Chebbi dunes by camel or 4x4. Quad biking adventure in Sahara. Traditional dinner, Berber music, stargazing." data-fr="Visite des gorges du Todra. Direction Merzouga et entrée dans les dunes d'Erg Chebbi à dos de chameau ou en 4x4. Balade en quad dans le Sahara. Dîner traditionnel, musique berbère, observation des étoiles.">Visit Todra Gorges. Head to Merzouga and enter Erg Chebbi dunes by camel or 4x4. Quad biking adventure in Sahara. Traditional dinner, Berber music, stargazing.</p>
                         </div>
                         <div class="tour-program-day">
-                            <h6>Jour 3: Merzouga – Draa Valley – Marrakech</h6>
-                            <p>Sunrise over dunes. Return through scenic Draa Valley and Atlas Mountains. Arrive Marrakech evening.</p>
+                            <h6 data-en="Day 3: Merzouga – Draa Valley – Marrakech" data-fr="Jour 3 : Merzouga – Vallée du Drâa – Marrakech">Day 3: Merzouga – Draa Valley – Marrakech</h6>
+                            <p data-en="Sunrise over dunes. Return through scenic Draa Valley and Atlas Mountains. Arrive Marrakech evening." data-fr="Lever de soleil sur les dunes. Retour via la magnifique vallée du Drâa et l'Atlas. Arrivée à Marrakech en soirée.">Sunrise over dunes. Return through scenic Draa Valley and Atlas Mountains. Arrive Marrakech evening.</p>
                         </div>
                     </div>
                 </div>
-                
                 <div class="tour-footer">
                     <div class="price">
                         <span class="price-eur">€110</span>
                         <span class="price-dh">1 200 DH</span>
                     </div>
-                    <button class="btn-book" onclick="bookTour('Merzouga 3 Jours','€110 / 1200 DH')">Réserver</button>
+                    <button class="btn-book" onclick="bookTour('Merzouga 3 Days','€110 / 1200 DH')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span data-en="Book Now" data-fr="Réserver">Book Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -115,37 +122,38 @@
             <div class="tour-slider-col">
                 <div class="tour-slider">
                     <div class="slider-container" id="slider-ourika">
-                        <div class="slide active"><img src="ourika/image1.jpg" alt="Ourika"></div>
-                        <div class="slide"><img src="ourika/image2.jpg" alt="Ourika"></div>
-                        <div class="slide"><img src="ourika/image3.jpg" alt="Ourika"></div>
+                        <div class="slide active"><img src="ourika/image1.jpg" alt="Ourika Valley" loading="lazy"></div>
+                        <div class="slide"><img src="ourika/image2.jpg" alt="Ourika Valley" loading="lazy"></div>
+                        <div class="slide"><img src="ourika/image3.jpg" alt="Ourika Valley" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-ourika',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-ourika',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-ourika',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-ourika',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-ourika"></div>
                 </div>
             </div>
             <div class="tour-info-col">
-                <div class="tour-badge">📍 Vallée d'Ourika · 1 Jour</div>
-                <h3 class="tour-title">Vallée d'Ourika avec Déjeuner & Chameau</h3>
-                
+                <div class="tour-badge" data-en="📍 Ourika Valley · 1 Day" data-fr="📍 Vallée d'Ourika · 1 Jour">📍 Ourika Valley · 1 Day</div>
+                <h3 class="tour-title" data-en="Ourika Valley with Lunch & Camel Ride" data-fr="Vallée d'Ourika avec Déjeuner & Chameau">Ourika Valley with Lunch & Camel Ride</h3>
                 <div class="tour-highlights">
-                    <h5>Points Forts:</h5>
+                    <h5 data-en="Highlights:" data-fr="Points Forts:">Highlights:</h5>
                     <ul>
-                        <li>Scenic drive from Marrakech to the Ourika Valley</li>
-                        <li>Visit traditional Berber villages in the Atlas Mountains</li>
-                        <li>Enjoy a guided walk with a local mountain guide</li>
-                        <li>Relax with a camel ride surrounded by nature</li>
-                        <li>Savor a traditional Moroccan lunch by the river</li>
-                        <li>Admire waterfalls, rivers, and panoramic valley views</li>
+                        <li data-en="Scenic drive from Marrakech to the Ourika Valley" data-fr="Trajet panoramique de Marrakech à la vallée de l'Ourika">Scenic drive from Marrakech to the Ourika Valley</li>
+                        <li data-en="Visit traditional Berber villages in the Atlas Mountains" data-fr="Visite de villages berbères traditionnels dans l'Atlas">Visit traditional Berber villages in the Atlas Mountains</li>
+                        <li data-en="Enjoy a guided walk with a local mountain guide" data-fr="Randonnée guidée avec un guide local de montagne">Enjoy a guided walk with a local mountain guide</li>
+                        <li data-en="Relax with a camel ride surrounded by nature" data-fr="Balade à dos de chameau au cœur de la nature">Relax with a camel ride surrounded by nature</li>
+                        <li data-en="Savor a traditional Moroccan lunch by the river" data-fr="Savourez un déjeuner marocain traditionnel au bord de la rivière">Savor a traditional Moroccan lunch by the river</li>
+                        <li data-en="Admire waterfalls, rivers, and panoramic valley views" data-fr="Admirez les cascades, rivières et vues panoramiques sur la vallée">Admire waterfalls, rivers, and panoramic valley views</li>
                     </ul>
                 </div>
-                
                 <div class="tour-footer">
                     <div class="price">
                         <span class="price-eur">€19</span>
                         <span class="price-dh">200 DH</span>
                     </div>
-                    <button class="btn-book" onclick="bookTour('Vallée Ourika','€19 / 200 DH')">Réserver</button>
+                    <button class="btn-book" onclick="bookTour('Ourika Valley','€19 / 200 DH')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span data-en="Book Now" data-fr="Réserver">Book Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -155,37 +163,38 @@
             <div class="tour-slider-col">
                 <div class="tour-slider">
                     <div class="slider-container" id="slider-ouzoud">
-                        <div class="slide active"><img src="ouzoud/image1.jpg" alt="Ouzoud"></div>
-                        <div class="slide"><img src="ouzoud/image2.jpg" alt="Ouzoud"></div>
-                        <div class="slide"><img src="ouzoud/image3.jpg" alt="Ouzoud"></div>
+                        <div class="slide active"><img src="ouzoud/image1.jpg" alt="Ouzoud Waterfalls" loading="lazy"></div>
+                        <div class="slide"><img src="ouzoud/image2.jpg" alt="Ouzoud Waterfalls" loading="lazy"></div>
+                        <div class="slide"><img src="ouzoud/image3.jpg" alt="Ouzoud Waterfalls" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-ouzoud',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-ouzoud',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-ouzoud',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-ouzoud',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-ouzoud"></div>
                 </div>
             </div>
             <div class="tour-info-col">
-                <div class="tour-badge">💦 Cascades d'Ouzoud · 1 Jour</div>
-                <h3 class="tour-title">Cascades d'Ouzoud avec Bateau & Guide</h3>
-                
+                <div class="tour-badge" data-en="💦 Ouzoud Waterfalls · 1 Day" data-fr="💦 Cascades d'Ouzoud · 1 Jour">💦 Ouzoud Waterfalls · 1 Day</div>
+                <h3 class="tour-title" data-en="Ouzoud Waterfalls with Boat Ride & Guide" data-fr="Cascades d'Ouzoud avec Bateau & Guide">Ouzoud Waterfalls with Boat Ride & Guide</h3>
                 <div class="tour-highlights">
-                    <h5>Points Forts:</h5>
+                    <h5 data-en="Highlights:" data-fr="Points Forts:">Highlights:</h5>
                     <ul>
-                        <li>Visit the famous Ouzoud Waterfalls on a full-day trip</li>
-                        <li>Guided walking tour with breathtaking panoramic views</li>
-                        <li>Enjoy a traditional boat ride near the waterfalls</li>
-                        <li>See Barbary monkeys in their natural habitat</li>
-                        <li>Free time for photos, relaxation, and lunch</li>
-                        <li>Comfortable round-trip transport from Marrakech</li>
+                        <li data-en="Visit the famous Ouzoud Waterfalls on a full-day trip" data-fr="Visite des célèbres cascades d'Ouzoud en journée complète">Visit the famous Ouzoud Waterfalls on a full-day trip</li>
+                        <li data-en="Guided walking tour with breathtaking panoramic views" data-fr="Visite guidée à pied avec des vues panoramiques à couper le souffle">Guided walking tour with breathtaking panoramic views</li>
+                        <li data-en="Enjoy a traditional boat ride near the waterfalls" data-fr="Profitez d'une balade en barque traditionnelle près des cascades">Enjoy a traditional boat ride near the waterfalls</li>
+                        <li data-en="See Barbary monkeys in their natural habitat" data-fr="Observez les macaques de Barbarie dans leur habitat naturel">See Barbary monkeys in their natural habitat</li>
+                        <li data-en="Free time for photos, relaxation, and lunch" data-fr="Temps libre pour les photos, la détente et le déjeuner">Free time for photos, relaxation, and lunch</li>
+                        <li data-en="Comfortable round-trip transport from Marrakech" data-fr="Transport aller-retour confortable depuis Marrakech">Comfortable round-trip transport from Marrakech</li>
                     </ul>
                 </div>
-                
                 <div class="tour-footer">
                     <div class="price">
                         <span class="price-eur">€19</span>
                         <span class="price-dh">200 DH</span>
                     </div>
-                    <button class="btn-book" onclick="bookTour('Cascades Ouzoud','€19 / 200 DH')">Réserver</button>
+                    <button class="btn-book" onclick="bookTour('Ouzoud Waterfalls','€19 / 200 DH')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span data-en="Book Now" data-fr="Réserver">Book Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -195,37 +204,38 @@
             <div class="tour-slider-col">
                 <div class="tour-slider">
                     <div class="slider-container" id="slider-essaouira">
-                        <div class="slide active"><img src="essaouira/image1.jpg" alt="Essaouira"></div>
-                        <div class="slide"><img src="essaouira/image2.jpg" alt="Essaouira"></div>
-                        <div class="slide"><img src="essaouira/image3.jpg" alt="Essaouira"></div>
+                        <div class="slide active"><img src="essaouira/image1.jpg" alt="Essaouira" loading="lazy"></div>
+                        <div class="slide"><img src="essaouira/image2.jpg" alt="Essaouira" loading="lazy"></div>
+                        <div class="slide"><img src="essaouira/image3.jpg" alt="Essaouira" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-essaouira',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-essaouira',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-essaouira',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-essaouira',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-essaouira"></div>
                 </div>
             </div>
             <div class="tour-info-col">
-                <div class="tour-badge">🏖️ Essaouira · 1 Jour</div>
-                <h3 class="tour-title">Journée à Essaouira & Sekkala</h3>
-                
+                <div class="tour-badge" data-en="🏖️ Essaouira · 1 Day" data-fr="🏖️ Essaouira · 1 Jour">🏖️ Essaouira · 1 Day</div>
+                <h3 class="tour-title" data-en="Day Trip to Essaouira & Sekkala" data-fr="Journée à Essaouira & Sekkala">Day Trip to Essaouira & Sekkala</h3>
                 <div class="tour-highlights">
-                    <h5>Points Forts:</h5>
+                    <h5 data-en="Highlights:" data-fr="Points Forts:">Highlights:</h5>
                     <ul>
-                        <li>Full-day Marrakech to Essaouira Day Trip</li>
-                        <li>Explore the UNESCO-listed Essaouira Medina</li>
-                        <li>Walk along the historic Sekkala of Essaouira</li>
-                        <li>Visit the traditional fishing port and old harbor</li>
-                        <li>Free time to enjoy the beach, souks, and cafés</li>
-                        <li>Scenic drive through argan tree countryside</li>
+                        <li data-en="Full-day Marrakech to Essaouira Day Trip" data-fr="Excursion d'une journée de Marrakech à Essaouira">Full-day Marrakech to Essaouira Day Trip</li>
+                        <li data-en="Explore the UNESCO-listed Essaouira Medina" data-fr="Explorez la Médina d'Essaouira classée à l'UNESCO">Explore the UNESCO-listed Essaouira Medina</li>
+                        <li data-en="Walk along the historic Sekkala of Essaouira" data-fr="Promenade le long de la Sekkala historique d'Essaouira">Walk along the historic Sekkala of Essaouira</li>
+                        <li data-en="Visit the traditional fishing port and old harbor" data-fr="Visite du port de pêche traditionnel et de l'ancien port">Visit the traditional fishing port and old harbor</li>
+                        <li data-en="Free time to enjoy the beach, souks, and cafés" data-fr="Temps libre pour profiter de la plage, des souks et des cafés">Free time to enjoy the beach, souks, and cafés</li>
+                        <li data-en="Scenic drive through argan tree countryside" data-fr="Trajet panoramique à travers la campagne aux arganiers">Scenic drive through argan tree countryside</li>
                     </ul>
                 </div>
-                
                 <div class="tour-footer">
                     <div class="price">
                         <span class="price-eur">€19</span>
                         <span class="price-dh">200 DH</span>
                     </div>
-                    <button class="btn-book" onclick="bookTour('Essaouira','€19 / 200 DH')">Réserver</button>
+                    <button class="btn-book" onclick="bookTour('Essaouira Day Trip','€19 / 200 DH')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span data-en="Book Now" data-fr="Réserver">Book Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -235,37 +245,38 @@
             <div class="tour-slider-col">
                 <div class="tour-slider">
                     <div class="slider-container" id="slider-ouarzazate">
-                        <div class="slide active"><img src="ouarzazate/image1.jpg" alt="Ouarzazate"></div>
-                        <div class="slide"><img src="ouarzazate/image2.jpg" alt="Ouarzazate"></div>
-                        <div class="slide"><img src="ouarzazate/image3.jpg" alt="Ouarzazate"></div>
+                        <div class="slide active"><img src="ouarzazate/image1.jpg" alt="Ouarzazate" loading="lazy"></div>
+                        <div class="slide"><img src="ouarzazate/image2.jpg" alt="Ouarzazate" loading="lazy"></div>
+                        <div class="slide"><img src="ouarzazate/image3.jpg" alt="Ouarzazate" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-ouarzazate',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-ouarzazate',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-ouarzazate',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-ouarzazate',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-ouarzazate"></div>
                 </div>
             </div>
             <div class="tour-info-col">
-                <div class="tour-badge">🏛️ Ouarzazate · 1 Jour</div>
-                <h3 class="tour-title">Aït Ben Haddou & Ouarzazate UNESCO</h3>
-                
+                <div class="tour-badge" data-en="🏛️ Ouarzazate · 1 Day" data-fr="🏛️ Ouarzazate · 1 Jour">🏛️ Ouarzazate · 1 Day</div>
+                <h3 class="tour-title" data-en="Aït Ben Haddou & Ouarzazate UNESCO" data-fr="Aït Ben Haddou & Ouarzazate UNESCO">Aït Ben Haddou & Ouarzazate UNESCO</h3>
                 <div class="tour-highlights">
-                    <h5>Points Forts:</h5>
+                    <h5 data-en="Highlights:" data-fr="Points Forts:">Highlights:</h5>
                     <ul>
-                        <li>Travel through High Atlas Mountains</li>
-                        <li>Visit UNESCO Ait Ben Haddou Kasbah</li>
-                        <li>Explore Ouarzazate (Hollywood of Morocco)</li>
-                        <li>Kasbah Taourirt visit</li>
-                        <li>Atlas Studios (optional)</li>
-                        <li>Cross Tizi n'Tichka Pass with panoramic views</li>
+                        <li data-en="Travel through High Atlas Mountains" data-fr="Traversée du Haut Atlas">Travel through High Atlas Mountains</li>
+                        <li data-en="Visit UNESCO Ait Ben Haddou Kasbah" data-fr="Visite de la Kasbah d'Aït Ben Haddou (UNESCO)">Visit UNESCO Ait Ben Haddou Kasbah</li>
+                        <li data-en="Explore Ouarzazate (Hollywood of Morocco)" data-fr="Explorez Ouarzazate (le Hollywood du Maroc)">Explore Ouarzazate (Hollywood of Morocco)</li>
+                        <li data-en="Kasbah Taourirt visit" data-fr="Visite de la Kasbah Taourirt">Kasbah Taourirt visit</li>
+                        <li data-en="Atlas Studios (optional)" data-fr="Studios Atlas (en option)">Atlas Studios (optional)</li>
+                        <li data-en="Cross Tizi n'Tichka Pass with panoramic views" data-fr="Traversée du col de Tizi n'Tichka avec vues panoramiques">Cross Tizi n'Tichka Pass with panoramic views</li>
                     </ul>
                 </div>
-                
                 <div class="tour-footer">
                     <div class="price">
                         <span class="price-eur">€33</span>
                         <span class="price-dh">350 DH</span>
                     </div>
-                    <button class="btn-book" onclick="bookTour('Ouarzazate UNESCO','€33 / 350 DH')">Réserver</button>
+                    <button class="btn-book" onclick="bookTour('Ouarzazate UNESCO','€33 / 350 DH')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span data-en="Book Now" data-fr="Réserver">Book Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -275,36 +286,37 @@
             <div class="tour-slider-col">
                 <div class="tour-slider">
                     <div class="slider-container" id="slider-agafay">
-                        <div class="slide active"><img src="agafay/image1.jpg" alt="Agafay"></div>
-                        <div class="slide"><img src="agafay/image2.jpg" alt="Agafay"></div>
-                        <div class="slide"><img src="agafay/image3.jpg" alt="Agafay"></div>
+                        <div class="slide active"><img src="agafay/image1.jpg" alt="Agafay Desert" loading="lazy"></div>
+                        <div class="slide"><img src="agafay/image2.jpg" alt="Agafay Desert" loading="lazy"></div>
+                        <div class="slide"><img src="agafay/image3.jpg" alt="Agafay Desert" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-agafay',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-agafay',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-agafay',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-agafay',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-agafay"></div>
                 </div>
             </div>
             <div class="tour-info-col">
-                <div class="tour-badge">📍 Désert d'Agafay · 1 Jour</div>
-                <h3 class="tour-title">Dîner-Spectacle Agafay avec Quad et Chameau</h3>
-                
+                <div class="tour-badge" data-en="📍 Agafay Desert · 1 Day" data-fr="📍 Désert d'Agafay · 1 Jour">📍 Agafay Desert · 1 Day</div>
+                <h3 class="tour-title" data-en="Agafay Dinner Show with Quad & Camel" data-fr="Dîner-Spectacle Agafay avec Quad et Chameau">Agafay Dinner Show with Quad & Camel</h3>
                 <div class="tour-highlights">
-                    <h5>Points Forts:</h5>
+                    <h5 data-en="Highlights:" data-fr="Points Forts:">Highlights:</h5>
                     <ul>
-                        <li>Quad biking experience in Agafay Desert</li>
-                        <li>Camel ride at sunset</li>
-                        <li>Traditional dinner under the stars</li>
-                        <li>Berber music and cultural show</li>
-                        <li>Stunning desert landscape views</li>
+                        <li data-en="Quad biking experience in Agafay Desert" data-fr="Balade en quad dans le désert d'Agafay">Quad biking experience in Agafay Desert</li>
+                        <li data-en="Camel ride at sunset" data-fr="Balade à dos de chameau au coucher du soleil">Camel ride at sunset</li>
+                        <li data-en="Traditional dinner under the stars" data-fr="Dîner traditionnel sous les étoiles">Traditional dinner under the stars</li>
+                        <li data-en="Berber music and cultural show" data-fr="Musique berbère et spectacle culturel">Berber music and cultural show</li>
+                        <li data-en="Stunning desert landscape views" data-fr="Vues époustouflantes sur le paysage désertique">Stunning desert landscape views</li>
                     </ul>
                 </div>
-                
                 <div class="tour-footer">
                     <div class="price">
                         <span class="price-eur">€56</span>
                         <span class="price-dh">600 DH</span>
                     </div>
-                    <button class="btn-book" onclick="bookTour('Agafay Desert','€56 / 600 DH')">Réserver</button>
+                    <button class="btn-book" onclick="bookTour('Agafay Desert','€56 / 600 DH')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span data-en="Book Now" data-fr="Réserver">Book Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -314,36 +326,37 @@
             <div class="tour-slider-col">
                 <div class="tour-slider">
                     <div class="slider-container" id="slider-montgolfiere">
-                        <div class="slide active"><img src="montgolfiere/image1.jpg" alt="Montgolfière"></div>
-                        <div class="slide"><img src="montgolfiere/image2.jpg" alt="Montgolfière"></div>
-                        <div class="slide"><img src="montgolfiere/image3.jpg" alt="Montgolfiere"></div>
+                        <div class="slide active"><img src="montgolfiere/image1.jpg" alt="Hot Air Balloon" loading="lazy"></div>
+                        <div class="slide"><img src="montgolfiere/image2.jpg" alt="Hot Air Balloon" loading="lazy"></div>
+                        <div class="slide"><img src="montgolfiere/image3.jpg" alt="Hot Air Balloon" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-montgolfiere',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-montgolfiere',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-montgolfiere',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-montgolfiere',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-montgolfiere"></div>
                 </div>
             </div>
             <div class="tour-info-col">
-                <div class="tour-badge">🎈 Montgolfières · 1 Jour</div>
-                <h3 class="tour-title">Vol en Montgolfière au Lever du Soleil</h3>
-                
+                <div class="tour-badge" data-en="🎈 Hot Air Balloon · 1 Day" data-fr="🎈 Montgolfières · 1 Jour">🎈 Hot Air Balloon · 1 Day</div>
+                <h3 class="tour-title" data-en="Sunrise Hot Air Balloon Flight" data-fr="Vol en Montgolfière au Lever du Soleil">Sunrise Hot Air Balloon Flight</h3>
                 <div class="tour-highlights">
-                    <h5>Points Forts:</h5>
+                    <h5 data-en="Highlights:" data-fr="Points Forts:">Highlights:</h5>
                     <ul>
-                        <li>40-minute hot air balloon flight</li>
-                        <li>Sunrise over Marrakech palm groves</li>
-                        <li>Traditional Berber breakfast</li>
-                        <li>Hotel transfer included</li>
-                        <li>Flight certificate</li>
+                        <li data-en="40-minute hot air balloon flight" data-fr="Vol en montgolfière de 40 minutes">40-minute hot air balloon flight</li>
+                        <li data-en="Sunrise over Marrakech palm groves" data-fr="Lever de soleil sur les palmeraies de Marrakech">Sunrise over Marrakech palm groves</li>
+                        <li data-en="Traditional Berber breakfast" data-fr="Petit-déjeuner berbère traditionnel">Traditional Berber breakfast</li>
+                        <li data-en="Hotel transfer included" data-fr="Transfert hôtel inclus">Hotel transfer included</li>
+                        <li data-en="Flight certificate" data-fr="Certificat de vol">Flight certificate</li>
                     </ul>
                 </div>
-                
                 <div class="tour-footer">
                     <div class="price">
                         <span class="price-eur">€168</span>
                         <span class="price-dh">1 800 DH</span>
                     </div>
-                    <button class="btn-book" onclick="bookTour('Montgolfière Marrakech','€168 / 1800 DH')">Réserver</button>
+                    <button class="btn-book" onclick="bookTour('Hot Air Balloon Marrakech','€168 / 1800 DH')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span data-en="Book Now" data-fr="Réserver">Book Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -353,36 +366,37 @@
             <div class="tour-slider-col">
                 <div class="tour-slider">
                     <div class="slider-container" id="slider-palmeraie">
-                        <div class="slide active"><img src="palmeraie/image1.jpg" alt="Palmeraie"></div>
-                        <div class="slide"><img src="palmeraie/image2.jpg" alt="Palmeraie"></div>
-                        <div class="slide"><img src="palmeraie/image3.jpg" alt="Palmeraie"></div>
+                        <div class="slide active"><img src="palmeraie/image1.jpg" alt="Palmeraie" loading="lazy"></div>
+                        <div class="slide"><img src="palmeraie/image2.jpg" alt="Palmeraie" loading="lazy"></div>
+                        <div class="slide"><img src="palmeraie/image3.jpg" alt="Palmeraie" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-palmeraie',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-palmeraie',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-palmeraie',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-palmeraie',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-palmeraie"></div>
                 </div>
             </div>
             <div class="tour-info-col">
-                <div class="tour-badge">🌴 Palmeraie · Demi-Journée</div>
-                <h3 class="tour-title">Quad/Buggy + Chameau Palmeraie</h3>
-                
+                <div class="tour-badge" data-en="🌴 Palmeraie · Half Day" data-fr="🌴 Palmeraie · Demi-Journée">🌴 Palmeraie · Half Day</div>
+                <h3 class="tour-title" data-en="Quad/Buggy + Camel Ride in Palmeraie" data-fr="Quad/Buggy + Chameau Palmeraie">Quad/Buggy + Camel Ride in Palmeraie</h3>
                 <div class="tour-highlights">
-                    <h5>Points Forts:</h5>
+                    <h5 data-en="Highlights:" data-fr="Points Forts:">Highlights:</h5>
                     <ul>
-                        <li>Quad or buggy riding in Marrakech palm grove</li>
-                        <li>Camel ride experience</li>
-                        <li>Explore Palmeraie desert landscape</li>
-                        <li>Half-day adventure</li>
-                        <li>All equipment included</li>
+                        <li data-en="Quad or buggy riding in Marrakech palm grove" data-fr="Balade en quad ou buggy dans la palmeraie de Marrakech">Quad or buggy riding in Marrakech palm grove</li>
+                        <li data-en="Camel ride experience" data-fr="Balade à dos de chameau">Camel ride experience</li>
+                        <li data-en="Explore Palmeraie desert landscape" data-fr="Explorez le paysage désertique de la Palmeraie">Explore Palmeraie desert landscape</li>
+                        <li data-en="Half-day adventure" data-fr="Aventure d'une demi-journée">Half-day adventure</li>
+                        <li data-en="All equipment included" data-fr="Tout l'équipement inclus">All equipment included</li>
                     </ul>
                 </div>
-                
                 <div class="tour-footer">
                     <div class="price">
                         <span class="price-eur">€37</span>
                         <span class="price-dh">400 DH</span>
                     </div>
-                    <button class="btn-book" onclick="bookTour('Palmeraie Quad','€37 / 400 DH')">Réserver</button>
+                    <button class="btn-book" onclick="bookTour('Palmeraie Quad','€37 / 400 DH')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span data-en="Book Now" data-fr="Réserver">Book Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -392,36 +406,37 @@
             <div class="tour-slider-col">
                 <div class="tour-slider">
                     <div class="slider-container" id="slider-imlil">
-                        <div class="slide active"><img src="imlil/image1.jpg" alt="Imlil"></div>
-                        <div class="slide"><img src="imlil/image2.jpg" alt="Imlil"></div>
-                        <div class="slide"><img src="imlil/image3.jpg" alt="Imlil"></div>
+                        <div class="slide active"><img src="imlil/image1.jpg" alt="Imlil Atlas" loading="lazy"></div>
+                        <div class="slide"><img src="imlil/image2.jpg" alt="Imlil Atlas" loading="lazy"></div>
+                        <div class="slide"><img src="imlil/image3.jpg" alt="Imlil Atlas" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-imlil',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-imlil',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-imlil',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-imlil',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-imlil"></div>
                 </div>
             </div>
             <div class="tour-info-col">
-                <div class="tour-badge">🏔️ Imlil Atlas · 1 Jour</div>
-                <h3 class="tour-title">Excursion Imlil — Atlas Montagne</h3>
-                
+                <div class="tour-badge" data-en="🏔️ Imlil Atlas · 1 Day" data-fr="🏔️ Imlil Atlas · 1 Jour">🏔️ Imlil Atlas · 1 Day</div>
+                <h3 class="tour-title" data-en="Imlil Trek — High Atlas Mountains" data-fr="Excursion Imlil — Atlas Montagne">Imlil Trek — High Atlas Mountains</h3>
                 <div class="tour-highlights">
-                    <h5>Points Forts:</h5>
+                    <h5 data-en="Highlights:" data-fr="Points Forts:">Highlights:</h5>
                     <ul>
-                        <li>Guided trek in the High Atlas Mountains</li>
-                        <li>Visit Berber villages around Imlil</li>
-                        <li>Traditional Moroccan lunch in local home</li>
-                        <li>Mint tea with panoramic mountain views</li>
-                        <li>Discover authentic mountain culture</li>
+                        <li data-en="Guided trek in the High Atlas Mountains" data-fr="Randonnée guidée dans le Haut Atlas">Guided trek in the High Atlas Mountains</li>
+                        <li data-en="Visit Berber villages around Imlil" data-fr="Visite des villages berbères autour d'Imlil">Visit Berber villages around Imlil</li>
+                        <li data-en="Traditional Moroccan lunch in local home" data-fr="Déjeuner marocain traditionnel chez l'habitant">Traditional Moroccan lunch in local home</li>
+                        <li data-en="Mint tea with panoramic mountain views" data-fr="Thé à la menthe avec vues panoramiques sur la montagne">Mint tea with panoramic mountain views</li>
+                        <li data-en="Discover authentic mountain culture" data-fr="Découvrez la culture authentique de la montagne">Discover authentic mountain culture</li>
                     </ul>
                 </div>
-                
                 <div class="tour-footer">
                     <div class="price">
                         <span class="price-eur">€28</span>
                         <span class="price-dh">300 DH</span>
                     </div>
-                    <button class="btn-book" onclick="bookTour('Imlil Atlas','€28 / 300 DH')">Réserver</button>
+                    <button class="btn-book" onclick="bookTour('Imlil Atlas Trek','€28 / 300 DH')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span data-en="Book Now" data-fr="Réserver">Book Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -431,37 +446,38 @@
             <div class="tour-slider-col">
                 <div class="tour-slider">
                     <div class="slider-container" id="slider-casablanca">
-                        <div class="slide active"><img src="casablanca/image1.jpg" alt="Casablanca"></div>
-                        <div class="slide"><img src="casablanca/image2.jpg" alt="Casablanca"></div>
-                        <div class="slide"><img src="casablanca/image3.jpg" alt="Casablanca"></div>
+                        <div class="slide active"><img src="casablanca/image1.jpg" alt="Casablanca" loading="lazy"></div>
+                        <div class="slide"><img src="casablanca/image2.jpg" alt="Casablanca" loading="lazy"></div>
+                        <div class="slide"><img src="casablanca/image3.jpg" alt="Casablanca" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-casablanca',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-casablanca',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-casablanca',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-casablanca',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-casablanca"></div>
                 </div>
             </div>
             <div class="tour-info-col">
-                <div class="tour-badge">🏙️ Casablanca · 1 Jour</div>
-                <h3 class="tour-title">Excursion Casablanca depuis Marrakech</h3>
-                
+                <div class="tour-badge" data-en="🏙️ Casablanca · 1 Day" data-fr="🏙️ Casablanca · 1 Jour">🏙️ Casablanca · 1 Day</div>
+                <h3 class="tour-title" data-en="Casablanca Day Trip from Marrakech" data-fr="Excursion Casablanca depuis Marrakech">Casablanca Day Trip from Marrakech</h3>
                 <div class="tour-highlights">
-                    <h5>Points Forts:</h5>
+                    <h5 data-en="Highlights:" data-fr="Points Forts:">Highlights:</h5>
                     <ul>
-                        <li>Visit Hassan II Mosque (one of the largest in the world)</li>
-                        <li>Explore Ain Diab Corniche along the Atlantic Ocean</li>
-                        <li>Discover the traditional Habous Quarter</li>
-                        <li>See Mohammed V Square and central Casablanca</li>
-                        <li>Rick's Café visit (optional)</li>
-                        <li>Modern and traditional city exploration</li>
+                        <li data-en="Visit Hassan II Mosque (one of the largest in the world)" data-fr="Visite de la Mosquée Hassan II (l'une des plus grandes au monde)">Visit Hassan II Mosque (one of the largest in the world)</li>
+                        <li data-en="Explore Ain Diab Corniche along the Atlantic Ocean" data-fr="Explorez la Corniche d'Ain Diab le long de l'Atlantique">Explore Ain Diab Corniche along the Atlantic Ocean</li>
+                        <li data-en="Discover the traditional Habous Quarter" data-fr="Découvrez le quartier traditionnel des Habous">Discover the traditional Habous Quarter</li>
+                        <li data-en="See Mohammed V Square and central Casablanca" data-fr="Visitez la place Mohammed V et le centre de Casablanca">See Mohammed V Square and central Casablanca</li>
+                        <li data-en="Rick's Café visit (optional)" data-fr="Visite du Rick's Café (en option)">Rick's Café visit (optional)</li>
+                        <li data-en="Modern and traditional city exploration" data-fr="Exploration de la ville moderne et traditionnelle">Modern and traditional city exploration</li>
                     </ul>
                 </div>
-                
                 <div class="tour-footer">
                     <div class="price">
                         <span class="price-eur">€33</span>
                         <span class="price-dh">350 DH</span>
                     </div>
-                    <button class="btn-book" onclick="bookTour('Casablanca','€33 / 350 DH')">Réserver</button>
+                    <button class="btn-book" onclick="bookTour('Casablanca Day Trip','€33 / 350 DH')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span data-en="Book Now" data-fr="Réserver">Book Now</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -470,31 +486,34 @@
 </section>
 
 <!-- Quick Activities -->
-<section class="quick-section">
+<section id="activities" class="quick-section">
     <div class="container">
-        <h2 class="section-title">Activités Express</h2>
+        <h2 class="section-title" data-en="Express Activities" data-fr="Activités Express">Express Activities</h2>
         <div class="quick-grid">
             
             <div class="quick-card">
                 <div class="quick-slider">
                     <div class="slider-container" id="slider-buggy">
-                        <div class="slide active"><img src="buggy-palmeraie/image1.jpg" alt="Buggy"></div>
-                        <div class="slide"><img src="buggy-palmeraie/image2.jpg" alt="Buggy"></div>
-                        <div class="slide"><img src="buggy-palmeraie/image3.jpg" alt="Buggy"></div>
+                        <div class="slide active"><img src="buggy-palmeraie/image1.jpg" alt="Buggy" loading="lazy"></div>
+                        <div class="slide"><img src="buggy-palmeraie/image2.jpg" alt="Buggy" loading="lazy"></div>
+                        <div class="slide"><img src="buggy-palmeraie/image3.jpg" alt="Buggy" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-buggy',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-buggy',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-buggy',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-buggy',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-buggy"></div>
                 </div>
                 <div class="quick-info">
-                    <h4>Buggy Palmeraie</h4>
-                    <p>Aventure buggy dans la palmeraie</p>
+                    <h4 data-en="Buggy Palmeraie" data-fr="Buggy Palmeraie">Buggy Palmeraie</h4>
+                    <p data-en="Buggy adventure in the palm grove" data-fr="Aventure buggy dans la palmeraie">Buggy adventure in the palm grove</p>
                     <div class="quick-footer">
                         <div class="quick-price">
                             <span class="quick-price-eur">€33</span>
                             <span class="quick-price-dh">350 DH</span>
                         </div>
-                        <button class="btn-book-small" onclick="bookTour('Buggy Palmeraie','€33 / 350 DH')">Réserver</button>
+                        <button class="btn-book-small" onclick="bookTour('Buggy Palmeraie','€33 / 350 DH')">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            <span data-en="Book" data-fr="Réserver">Book</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -502,23 +521,26 @@
             <div class="quick-card">
                 <div class="quick-slider">
                     <div class="slider-container" id="slider-quad">
-                        <div class="slide active"><img src="quad-agafay/image1.jpg" alt="Quad"></div>
-                        <div class="slide"><img src="quad-agafay/image2.jpg" alt="Quad"></div>
-                        <div class="slide"><img src="quad-agafay/image3.jpg" alt="Quad"></div>
+                        <div class="slide active"><img src="quad-agafay/image1.jpg" alt="Quad" loading="lazy"></div>
+                        <div class="slide"><img src="quad-agafay/image2.jpg" alt="Quad" loading="lazy"></div>
+                        <div class="slide"><img src="quad-agafay/image3.jpg" alt="Quad" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-quad',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-quad',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-quad',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-quad',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-quad"></div>
                 </div>
                 <div class="quick-info">
-                    <h4>Quad Agafay + Dîner</h4>
-                    <p>Quad, chameau et spectacle</p>
+                    <h4 data-en="Quad Agafay + Dinner Show" data-fr="Quad Agafay + Dîner">Quad Agafay + Dinner Show</h4>
+                    <p data-en="Quad, camel & cultural show" data-fr="Quad, chameau et spectacle">Quad, camel & cultural show</p>
                     <div class="quick-footer">
                         <div class="quick-price">
                             <span class="quick-price-eur">€51</span>
                             <span class="quick-price-dh">550 DH</span>
                         </div>
-                        <button class="btn-book-small" onclick="bookTour('Quad Agafay Dîner','€51 / 550 DH')">Réserver</button>
+                        <button class="btn-book-small" onclick="bookTour('Quad Agafay Dinner','€51 / 550 DH')">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            <span data-en="Book" data-fr="Réserver">Book</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -526,23 +548,26 @@
             <div class="quick-card">
                 <div class="quick-slider">
                     <div class="slider-container" id="slider-city">
-                        <div class="slide active"><img src="city-tour/image1.jpg" alt="City"></div>
-                        <div class="slide"><img src="city-tour/image2.jpg" alt="City"></div>
-                        <div class="slide"><img src="city-tour/image3.jpg" alt="City"></div>
+                        <div class="slide active"><img src="city-tour/image1.jpg" alt="City Tour" loading="lazy"></div>
+                        <div class="slide"><img src="city-tour/image2.jpg" alt="City Tour" loading="lazy"></div>
+                        <div class="slide"><img src="city-tour/image3.jpg" alt="City Tour" loading="lazy"></div>
                     </div>
-                    <button class="slider-btn prev" onclick="changeSlide('slider-city',-1)">‹</button>
-                    <button class="slider-btn next" onclick="changeSlide('slider-city',1)">›</button>
+                    <button class="slider-btn prev" onclick="changeSlide('slider-city',-1)" aria-label="Previous">‹</button>
+                    <button class="slider-btn next" onclick="changeSlide('slider-city',1)" aria-label="Next">›</button>
                     <div class="slider-dots" id="dots-slider-city"></div>
                 </div>
                 <div class="quick-info">
-                    <h4>Marrakech City Tour</h4>
-                    <p>Visite guidée de Marrakech</p>
+                    <h4 data-en="Marrakech City Tour" data-fr="Marrakech City Tour">Marrakech City Tour</h4>
+                    <p data-en="Guided tour of Marrakech highlights" data-fr="Visite guidée de Marrakech">Guided tour of Marrakech highlights</p>
                     <div class="quick-footer">
                         <div class="quick-price">
                             <span class="quick-price-eur">€19</span>
                             <span class="quick-price-dh">200 DH</span>
                         </div>
-                        <button class="btn-book-small" onclick="bookTour('City Tour','€19 / 200 DH')">Réserver</button>
+                        <button class="btn-book-small" onclick="bookTour('Marrakech City Tour','€19 / 200 DH')">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            <span data-en="Book" data-fr="Réserver">Book</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -554,17 +579,17 @@
 <!-- Contact -->
 <section id="contact" class="contact-section">
     <div class="container">
-        <h2 class="section-title">Contactez-Nous</h2>
+        <h2 class="section-title" data-en="Contact Us" data-fr="Contactez-Nous">Contact Us</h2>
         <div class="contact-grid">
             <div class="contact-info">
-                <p>📍 Marrakech, Maroc</p>
+                <p>📍 Marrakech, Morocco</p>
                 <p>📞 +212 600 000 000</p>
                 <p>📧 contact@himarrakechtravel.com</p>
             </div>
             <div class="contact-cta">
-                <a href="https://wa.me/212600000000" class="btn btn-whatsapp">
+                <a href="https://wa.me/212600000000" class="btn btn-whatsapp" target="_blank">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                    Discuter sur WhatsApp
+                    <span data-en="Chat on WhatsApp" data-fr="Discuter sur WhatsApp">Chat on WhatsApp</span>
                 </a>
             </div>
         </div>
@@ -574,8 +599,8 @@
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
-        <p class="logo"><span class="logo-hi">Hi</span> <span class="logo-marrakech">Marrakech Travel</span></p>
-        <p>&copy; 2024 Hi Marrakech Travel. Tous droits réservés.</p>
+        <p class="logo" style="justify-content:center;margin-bottom:10px;"><span class="logo-hi">Hi</span> <span class="logo-marrakech">Marrakech Travel</span></p>
+        <p data-en="&copy; 2025 Hi Marrakech Travel. All rights reserved." data-fr="&copy; 2025 Hi Marrakech Travel. Tous droits réservés.">&copy; 2025 Hi Marrakech Travel. All rights reserved.</p>
     </div>
 </footer>
 
